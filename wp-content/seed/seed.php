@@ -952,4 +952,11 @@ update_option( 'permalink_structure', '/%postname%/' );
 flush_rewrite_rules( false );
 
 echo "settings: reading, identity, timezone, permalinks done\n";
+
+foreach ( [ [ 'post', 'hello-world' ], [ 'page', 'sample-page' ], [ 'page', 'privacy-policy' ] ] as [ $default_type, $default_slug ] ) {
+	foreach ( get_posts( [ 'name' => $default_slug, 'numberposts' => 1, 'post_status' => 'any', 'post_type' => $default_type ] ) as $default_post ) {
+		wp_delete_post( $default_post->ID, true );
+	}
+}
+echo "defaults: removed\n";
 echo "SEED COMPLETE\n";

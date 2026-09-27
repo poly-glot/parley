@@ -18,6 +18,6 @@ echo "Setting up WordPress at $SITE_HOST"
 wp core install --url="$SITE_HOST" --title="WordPress" --admin_user="admin" --admin_email="admin@example.com" --admin_password="password" --skip-email
 wp rewrite structure '/%postname%/'
 
-if [ -f wp-content/seed/seed.php ]; then
-	wp eval-file wp-content/seed/seed.php
+if [ -f wp-content/seed/run.php ]; then
+	php wp-content/seed/run.php
 fi
