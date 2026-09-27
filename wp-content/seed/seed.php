@@ -96,7 +96,9 @@ $alts = [
 	'region-middle-east.jpg'        => 'A port construction site at dusk in the Levant',
 	'team-eleanor-marsh.jpg'        => 'Portrait of Eleanor Marsh',
 	'team-kasia-nowak.jpg'          => 'Portrait of Kasia Nowak',
+	'team-oliver-grant.jpg'         => 'Portrait of Oliver Grant',
 	'team-priya-raman.jpg'          => 'Portrait of Priya Raman',
+	'team-rafael-duarte.jpg'        => 'Portrait of Rafael Duarte',
 	'team-tunde-adeyemi-clarke.jpg' => 'Portrait of Tunde Adeyemi-Clarke',
 ];
 
