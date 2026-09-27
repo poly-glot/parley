@@ -77,23 +77,27 @@ function parley_seed_menu( $name, $items ) {
 }
 
 $alts = [
-	'about-meeting.jpg'        => 'Journalists and speakers in conversation at a press event',
-	'hero-westminster.jpg'     => 'Westminster at dusk seen from across the river',
-	'panel-phone.jpg'          => 'A hand holding a phone showing social media apps',
-	'post-boardroom.jpg'       => 'An empty boardroom at night with one chair pulled out',
-	'post-committee.jpg'       => 'A parliamentary committee room',
-	'post-containers.jpg'      => 'A container port at dawn',
-	'post-keyboard.jpg'        => 'Hands on a keyboard with a screen reader visible',
-	'post-microphone.jpg'      => 'A studio microphone in soft light',
-	'post-newspaper.jpg'       => 'A newspaper opinion page with a pen resting on it',
-	'post-notifications.jpg'   => 'A phone screen with blurred notifications',
-	'post-press.jpg'           => 'A silhouette in front of a window wearing a press lanyard',
-	'post-social-apps.jpg'     => 'Close-up of social media app icons on a phone screen',
-	'region-africa.jpg'        => 'A senior public figure in West Africa',
-	'region-asia.jpg'          => 'A crowd at a peaceful rally with one raised hand in focus',
-	'region-europe.jpg'        => 'A candlelit vigil outside a court building in Central Europe',
-	'region-latin-america.jpg' => 'An Andean landscape in Colombia',
-	'region-middle-east.jpg'   => 'A port construction site at dusk in the Levant',
+	'about-meeting.jpg'             => 'Journalists and speakers in conversation at a press event',
+	'hero-westminster.jpg'          => 'Westminster at dusk seen from across the river',
+	'panel-phone.jpg'               => 'A hand holding a phone showing social media apps',
+	'post-boardroom.jpg'            => 'An empty boardroom at night with one chair pulled out',
+	'post-committee.jpg'            => 'A parliamentary committee room',
+	'post-containers.jpg'           => 'A container port at dawn',
+	'post-keyboard.jpg'             => 'Hands on a keyboard with a screen reader visible',
+	'post-microphone.jpg'           => 'A studio microphone in soft light',
+	'post-newspaper.jpg'            => 'A newspaper opinion page with a pen resting on it',
+	'post-notifications.jpg'        => 'A phone screen with blurred notifications',
+	'post-press.jpg'                => 'A silhouette in front of a window wearing a press lanyard',
+	'post-social-apps.jpg'          => 'Close-up of social media app icons on a phone screen',
+	'region-africa.jpg'             => 'A senior public figure in West Africa',
+	'region-asia.jpg'               => 'A crowd at a peaceful rally with one raised hand in focus',
+	'region-europe.jpg'             => 'A candlelit vigil outside a court building in Central Europe',
+	'region-latin-america.jpg'      => 'An Andean landscape in Colombia',
+	'region-middle-east.jpg'        => 'A port construction site at dusk in the Levant',
+	'team-eleanor-marsh.jpg'        => 'Portrait of Eleanor Marsh',
+	'team-kasia-nowak.jpg'          => 'Portrait of Kasia Nowak',
+	'team-priya-raman.jpg'          => 'Portrait of Priya Raman',
+	'team-tunde-adeyemi-clarke.jpg' => 'Portrait of Tunde Adeyemi-Clarke',
 ];
 
 $img = [];
@@ -685,7 +689,7 @@ foreach ( $team as $slug => $member ) {
 		'linkedin'  => 'https://www.linkedin.com/in/' . $slug,
 		'role'      => $member['role'],
 		'x'         => 'https://x.com/' . str_replace( '-', '', $slug ),
-	] );
+	], $img[ 'team-' . $slug . '.jpg' ] ?? 0 );
 	$team_ids[ $slug ] = $id;
 	$created_team     += $c;
 }

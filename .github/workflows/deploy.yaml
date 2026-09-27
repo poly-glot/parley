@@ -21,6 +21,18 @@ jobs:
           --quiet
           --region europe-west2
       - run: >-
+          gcloud run jobs update "${{ github.event.repository.name }}-bootstrap"
+          --image "$IMAGE:${{ github.sha }}"
+          --project firebase-cloud-491613
+          --quiet
+          --region europe-west2
+      - run: >-
+          gcloud run jobs execute "${{ github.event.repository.name }}-bootstrap"
+          --project firebase-cloud-491613
+          --quiet
+          --region europe-west2
+          --wait
+      - run: >-
           npx --yes firebase-tools deploy
           --only hosting:parley-junaid
           --non-interactive

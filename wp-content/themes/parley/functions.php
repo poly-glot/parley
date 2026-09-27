@@ -1,47 +1,4 @@
 <?php
-const PARLEY_STYLES = array(
-	'base/tokens',
-	'base/base',
-	'base/layout',
-	'atoms/button',
-	'atoms/heading',
-	'atoms/icon',
-	'atoms/logo',
-	'atoms/prose',
-	'atoms/side-label',
-	'components/about-intro',
-	'components/article',
-	'components/bio',
-	'components/case-carousel',
-	'components/case-study',
-	'components/checklist',
-	'components/contact-aside',
-	'components/contact-form',
-	'components/credits-table',
-	'components/cta-band',
-	'components/dispatch-featured',
-	'components/dispatch-list',
-	'components/dispatch-toolbar',
-	'components/dispatches-index',
-	'components/faq',
-	'components/home-hero',
-	'components/image-panel',
-	'components/intro-copy',
-	'components/intro-panel',
-	'components/page-hero',
-	'components/process-steps',
-	'components/region-list',
-	'components/section-intro',
-	'components/service-carousel',
-	'components/service-list',
-	'components/site-footer',
-	'components/site-header',
-	'components/statement',
-	'components/portrait',
-	'components/team-grid',
-	'components/values',
-	'components/venn',
-);
 
 const PARLEY_REGIONS = array(
 	'latin-america' => 'Latin America',
@@ -69,16 +26,32 @@ add_action( 'after_setup_theme', function () {
 	add_image_size( 'portrait', 800, 1000, true );
 } );
 
+function parley_stylesheets(): array {
+	$css   = get_theme_file_path( 'assets/css/' );
+	$parts = array_merge( glob( $css . 'atoms/*.css' ), glob( $css . 'components/*.css' ) );
+
+	return array_merge(
+		array( 'base/tokens.css', 'base/base.css', 'base/layout.css' ),
+		array_map( fn ( $path ) => substr( $path, strlen( $css ) ), $parts )
+	);
+}
+
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'parley-fonts', 'https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&display=swap', array(), null );
 
 	$version = wp_get_theme()->get( 'Version' );
-	$previous = array( 'parley-fonts' );
+	$bundle  = get_theme_file_path( 'assets/css/main.css' );
 
-	foreach ( PARLEY_STYLES as $sheet ) {
-		$handle = 'parley-' . str_replace( '/', '-', $sheet );
-		wp_enqueue_style( $handle, get_theme_file_uri( 'assets/css/' . $sheet . '.css' ), $previous, $version );
-		$previous = array( $handle );
+	if ( file_exists( $bundle ) ) {
+		wp_enqueue_style( 'parley-main', get_theme_file_uri( 'assets/css/main.css' ), array( 'parley-fonts' ), filemtime( $bundle ) );
+	} else {
+		$previous = array( 'parley-fonts' );
+
+		foreach ( parley_stylesheets() as $sheet ) {
+			$handle = 'parley-' . str_replace( array( '/', '.css' ), array( '-', '' ), $sheet );
+			wp_enqueue_style( $handle, get_theme_file_uri( 'assets/css/' . $sheet ), $previous, $version );
+			$previous = array( $handle );
+		}
 	}
 
 	wp_enqueue_script( 'parley-navigation', get_theme_file_uri( 'assets/js/navigation.js' ), array(), $version, array( 'strategy' => 'defer' ) );
