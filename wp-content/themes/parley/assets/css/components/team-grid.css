@@ -1,0 +1,57 @@
+.team-grid__list {
+    column-gap: var(--space-6);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+    list-style: none;
+    row-gap: var(--space-7);
+}
+
+.team-card {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    position: relative;
+    row-gap: 0;
+}
+
+.team-card__name {
+    color: var(--color-brand);
+    font-size: var(--text-lg);
+    text-transform: uppercase;
+}
+
+.team-card__name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.team-card__name a::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.team-card__role {
+    align-self: end;
+    border-bottom: 2px solid var(--color-brand);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-5);
+    padding: var(--space-1) 0 var(--space-3);
+}
+
+.team-card__portrait {
+    filter: grayscale(1);
+    transition:
+        filter var(--duration) var(--ease),
+        transform 500ms var(--ease);
+}
+
+.team-card:hover .team-card__portrait {
+    transform: translateY(-4px);
+}
+
+.team-card:hover .team-card__name a,
+.team-card:focus-within .team-card__name a {
+    text-decoration: underline;
+}

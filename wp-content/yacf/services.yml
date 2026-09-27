@@ -1,0 +1,74 @@
+post_types:
+  service:
+    archive: true
+    icon: dashicons-megaphone
+    label: Services
+    rewrite: services
+    singular: Service
+    supports: [title, page-attributes]
+
+field_groups:
+  service_details:
+    post_types: [service]
+    title: Service
+    fields:
+      icon:
+        choices: { broadcast: Broadcast, flag: Flag, microphone: Microphone, play: Play, rocket: Rocket, share: Share, shield: Shield }
+        column: true
+        label: Icon
+        type: select
+        width: 33
+      tagline:
+        column: true
+        label: Tagline
+        type: text
+        width: 67
+      summary:
+        label: Summary
+        rows: 3
+        searchable: true
+        type: textarea
+      intro:
+        label: Intro
+        type: wysiwyg
+      panel_image:
+        label: Panel image
+        type: image
+      panel:
+        fields:
+          heading: { label: Heading, type: text }
+          body: { label: Body, type: wysiwyg }
+        label: Panel passages
+        type: repeater
+      included:
+        fields:
+          item: { label: Item, type: text }
+        label: What's included
+        type: repeater
+      steps:
+        fields:
+          title: { label: Title, type: text, width: 30 }
+          text: { label: Text, rows: 2, type: textarea, width: 70 }
+        label: How we work
+        type: repeater
+      faqs:
+        fields:
+          question: { label: Question, type: text }
+          answer: { label: Answer, rows: 3, type: textarea }
+        label: FAQs
+        type: repeater
+      cta_heading:
+        label: CTA heading
+        type: text
+      cta_body:
+        label: CTA body
+        rows: 3
+        type: textarea
+      cta_button_label:
+        label: CTA button label
+        type: text
+        width: 50
+      cta_button_url:
+        label: CTA button URL
+        type: text
+        width: 50

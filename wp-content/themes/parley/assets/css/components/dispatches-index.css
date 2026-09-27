@@ -1,0 +1,9 @@
+.dispatches-index {
+    padding-bottom: var(--space-9);
+}
+
+.dispatches-index__list {
+    display: grid;
+    justify-content: center;
+    margin-top: var(--space-8);
+}

@@ -1,0 +1,71 @@
+.home-hero {
+    background: var(--color-night);
+    display: grid;
+    isolation: isolate;
+    min-height: clamp(30rem, 78vh, 46rem);
+    overflow: hidden;
+    position: relative;
+}
+
+.home-hero__image {
+    animation: home-hero-settle 1.6s var(--ease) both;
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    object-position: 60% 50%;
+    position: absolute;
+    width: 100%;
+    z-index: -2;
+}
+
+.home-hero::after {
+    background:
+        linear-gradient(90deg, rgb(13 15 22 / 0.88) 0%, rgb(13 15 22 / 0.55) 45%, rgb(13 15 22 / 0.15) 100%),
+        linear-gradient(0deg, rgb(13 15 22 / 0.75) 0%, transparent 45%);
+    content: "";
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.home-hero__inner {
+    align-content: end;
+    align-items: end;
+    display: grid;
+    gap: var(--space-6);
+    padding-block: var(--space-9);
+}
+
+.home-hero__title {
+    color: var(--color-white);
+    font-size: var(--text-3xl);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.home-hero__line {
+    display: block;
+    white-space: nowrap;
+}
+
+.home-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+@media (min-width: 60rem) {
+    .home-hero__inner {
+        grid-template-columns: 1fr auto;
+        padding-inline-start: calc(var(--gutter) + var(--space-8));
+    }
+}
+
+@keyframes home-hero-settle {
+    from {
+        opacity: 0;
+        transform: scale(1.06);
+    }
+}

@@ -1,0 +1,47 @@
+:root {
+    --color-brand: #16299c;
+    --color-brand-bright: #2447e6;
+    --color-brand-deep: #0d1a6e;
+    --color-ink: #262a38;
+    --color-ink-muted: #5e6275;
+    --color-ink-faint: #62667a;
+    --color-night: #16181f;
+    --color-night-soft: #22252f;
+    --color-line: #d4d7e1;
+    --color-mist: #e7e9f1;
+    --color-paper: #f3f4f8;
+    --color-white: #ffffff;
+    --color-focus: #ffb81c;
+
+    --font-display: "Barlow", "DIN Next", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+
+    --text-xs: 0.8125rem;
+    --text-sm: 0.9375rem;
+    --text-base: 1rem;
+    --text-md: 1.125rem;
+    --text-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+    --text-xl: clamp(1.625rem, 1.3rem + 1.4vw, 2.25rem);
+    --text-2xl: clamp(2.125rem, 1.6rem + 2.2vw, 3.25rem);
+    --text-3xl: clamp(2.75rem, 1.9rem + 3.6vw, 4.75rem);
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-9: clamp(4rem, 3rem + 4vw, 6.5rem);
+
+    --measure: 38rem;
+    --container: 72rem;
+    --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+    --radius: 2px;
+    --header-height: 4.5rem;
+
+    --shadow-card: 0 1.25rem 2.5rem -1.25rem rgb(13 26 110 / 0.35);
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+    --duration: 180ms;
+}

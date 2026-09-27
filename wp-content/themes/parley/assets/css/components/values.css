@@ -1,0 +1,20 @@
+.values__list {
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    list-style: none;
+}
+
+.values__item {
+    border-top: 3px solid var(--color-brand);
+    display: grid;
+    gap: var(--space-3);
+    padding-top: var(--space-5);
+}
+
+.values__title {
+    color: var(--color-brand);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    text-transform: uppercase;
+}

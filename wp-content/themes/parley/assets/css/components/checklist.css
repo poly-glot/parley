@@ -1,0 +1,30 @@
+.checklist__title {
+    margin-bottom: var(--space-6);
+}
+
+.checklist__items {
+    display: grid;
+    gap: 0 var(--space-7);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    list-style: none;
+    padding: 0;
+}
+
+.checklist__item {
+    border-top: 1px solid var(--color-line);
+    color: var(--color-ink);
+    padding: var(--space-4) 0 var(--space-4) var(--space-6);
+    position: relative;
+}
+
+.checklist__item::before {
+    border-bottom: 2px solid var(--color-brand);
+    border-left: 2px solid var(--color-brand);
+    content: "";
+    height: 0.4rem;
+    left: 0.2rem;
+    position: absolute;
+    top: 1.55rem;
+    transform: rotate(-45deg);
+    width: 0.8rem;
+}

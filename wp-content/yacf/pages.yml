@@ -1,0 +1,68 @@
+field_groups:
+  page_hero:
+    post_types: [page]
+    title: Hero
+    fields:
+      subtitle:
+        label: Hero subtitle
+        type: text
+  page_front:
+    post_types: [page]
+    title: Front page
+    fields:
+      hero_line_1:
+        label: Hero line 1
+        type: text
+        width: 50
+      hero_line_2:
+        label: Hero line 2
+        type: text
+        width: 50
+      approach_heading:
+        label: Approach heading
+        type: text
+      approach_body:
+        label: Approach body
+        rows: 4
+        type: textarea
+  page_about:
+    post_types: [page]
+    title: About page
+    fields:
+      intro_lead:
+        label: Intro lead
+        rows: 3
+        type: textarea
+      intro_body:
+        label: Intro body
+        type: wysiwyg
+      venn_heading:
+        label: Venn heading
+        type: text
+      venn_label_1:
+        label: Venn label 1
+        type: text
+        width: 33
+      venn_label_2:
+        label: Venn label 2
+        type: text
+        width: 33
+      venn_label_3:
+        label: Venn label 3
+        type: text
+        width: 34
+      venn_caption:
+        label: Venn caption
+        type: text
+      story:
+        fields:
+          heading: { label: Heading, type: text }
+          body: { label: Body, type: wysiwyg }
+        label: Story sections
+        type: repeater
+      values:
+        fields:
+          title: { label: Title, type: text, width: 40 }
+          text: { label: Text, rows: 2, type: textarea, width: 60 }
+        label: Values
+        type: repeater

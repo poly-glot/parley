@@ -1,0 +1,18 @@
+.statement {
+    display: grid;
+    gap: var(--space-5);
+    padding-block: var(--space-9);
+}
+
+.statement__text {
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.statement__support {
+    font-size: var(--text-md);
+    max-width: var(--measure);
+}

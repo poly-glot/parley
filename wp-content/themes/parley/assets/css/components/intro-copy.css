@@ -1,0 +1,11 @@
+.intro-copy {
+    padding-block: var(--space-2) var(--space-9);
+}
+
+.intro-copy .prose {
+    margin-inline: auto;
+}
+
+.intro-copy--spaced {
+    padding-top: var(--space-9);
+}

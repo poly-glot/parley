@@ -1,0 +1,68 @@
+post_types:
+  case_study:
+    archive: true
+    icon: dashicons-portfolio
+    label: Our Work
+    rewrite: work
+    singular: Case Study
+    supports: [title, thumbnail, page-attributes]
+
+field_groups:
+  case_study_details:
+    post_types: [case_study]
+    title: Case study
+    fields:
+      region:
+        choices: { africa: Africa, asia: Asia, europe: Europe, latin-america: Latin America, middle-east: Middle East }
+        column: { sortable: true }
+        label: Region
+        type: select
+        width: 50
+      coordinates:
+        label: Coordinates
+        type: text
+        width: 50
+      client_line:
+        column: true
+        label: Client line
+        searchable: true
+        type: text
+      region_summary:
+        label: Region summary
+        rows: 4
+        type: textarea
+      teaser:
+        label: Teaser
+        rows: 4
+        type: textarea
+      services:
+        label: Services
+        multiple: true
+        post_types: [service]
+        type: post
+      duration:
+        label: Duration
+        type: text
+        width: 50
+      results:
+        fields:
+          figure: { label: Figure, type: text, width: 40 }
+          label: { label: Label, type: text, width: 60 }
+        label: Results
+        type: repeater
+      challenge:
+        label: The challenge
+        type: wysiwyg
+      approach:
+        label: Our approach
+        type: wysiwyg
+      outcome:
+        label: The outcome
+        type: wysiwyg
+      quote:
+        label: Quote
+        rows: 3
+        type: textarea
+      quote_attribution:
+        label: Quote attribution
+        type: text

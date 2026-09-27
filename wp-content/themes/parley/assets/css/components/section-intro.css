@@ -1,0 +1,9 @@
+.section-intro__content {
+    display: grid;
+    gap: var(--space-7);
+    min-width: 0;
+}
+
+.section-intro__footer {
+    margin-top: var(--space-4);
+}

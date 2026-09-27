@@ -1,0 +1,81 @@
+.bio {
+    display: grid;
+    gap: var(--space-7) var(--space-8);
+    padding-block: var(--space-8) var(--space-9);
+}
+
+.bio__aside {
+    display: grid;
+    gap: var(--space-4);
+    justify-items: center;
+    max-width: 16rem;
+}
+
+.bio__portrait {
+    background-color: var(--color-paper);
+    filter: grayscale(1);
+}
+
+.bio__links {
+    display: flex;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+}
+
+.bio__links a {
+    align-items: center;
+    display: inline-flex;
+    height: 2.5rem;
+    justify-content: center;
+    width: 2.5rem;
+}
+
+.bio__body {
+    display: grid;
+    gap: var(--space-5);
+    justify-items: start;
+    max-width: 42rem;
+}
+
+.bio__name {
+    color: var(--color-brand);
+    font-size: var(--text-2xl);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.bio__role {
+    color: var(--color-ink-faint);
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.bio__languages {
+    font-weight: 500;
+    text-transform: none;
+}
+
+.bio__lead {
+    color: var(--color-ink);
+    font-size: var(--text-md);
+    line-height: 1.75;
+}
+
+.bio .button .button__icon {
+    transform: none;
+}
+
+@media (min-width: 48rem) {
+    .bio {
+        grid-template-columns: 16rem 1fr;
+    }
+}
+
+.bio-band {
+    display: grid;
+    padding-block: var(--space-7);
+    place-items: center;
+}

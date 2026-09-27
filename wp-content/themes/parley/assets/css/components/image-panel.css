@@ -1,0 +1,42 @@
+.image-panel {
+    background: var(--color-brand);
+    color: var(--color-white);
+    display: grid;
+    isolation: isolate;
+    position: relative;
+}
+
+.image-panel__image {
+    aspect-ratio: 21 / 8;
+    filter: grayscale(1) contrast(1.1);
+    max-height: 30rem;
+    mix-blend-mode: luminosity;
+    object-fit: cover;
+    opacity: 0.8;
+    width: 100%;
+}
+
+.image-panel::before {
+    background: linear-gradient(180deg, rgb(36 71 230 / 0.55) 0%, var(--color-brand) min(34rem, 55vw));
+    content: "";
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.image-panel__content {
+    margin-top: clamp(-10rem, -12vw, -4rem);
+    padding-bottom: var(--space-9);
+    position: relative;
+    z-index: 2;
+}
+
+.image-panel__heading {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+.image-panel .prose > .image-panel__heading:not(:first-child) {
+    margin-top: var(--space-7);
+}

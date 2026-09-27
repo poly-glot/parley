@@ -1,0 +1,18 @@
+.portrait {
+    align-items: center;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(160deg, #f4f5f8 0%, #dcdfe7 100%);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.portrait__initials {
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 2rem + 2vw, 4rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+}
