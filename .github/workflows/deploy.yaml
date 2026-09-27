@@ -20,6 +20,11 @@ jobs:
           --project firebase-cloud-491613
           --quiet
           --region europe-west2
+      - run: >-
+          npx --yes firebase-tools deploy
+          --only hosting:parley-junaid
+          --non-interactive
+          --project firebase-cloud-491613
 
 env:
   IMAGE: europe-west2-docker.pkg.dev/firebase-cloud-491613/firebase-cloud/${{ github.event.repository.name }}
